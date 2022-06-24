@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/nav.css" />
+</head>
+
+<style></style>
+
+<body>
+  <nav class="container" style="background-image: url('./images/bg.png')">
+    
+    <div class="nav-section">
+      <div class="logo">
+        <img src="./images/logo.png" alt="" />
+        <button>
+          <img
+            src="https://s.imgur.com/desktop-assets/desktop-assets/icon-new-post.13ab64f9f36ad8f25ae3544b350e2ae1.svg"
+            alt="" />New Post
+        </button>
+      </div>
+
+      <div class="search">
+        <input type="text" oninput="debounce(searchMovie,900)" class="text" id="movie" placeholder="Images, #tags, @users oh my!" />
+        <button class="search-btn">
+          <span class="material-icons md-48"> search </span>
+        </button>
+      </div>
+    
+      <div class="sign">
+        <p><span class="material-icons md-34"> badge </span></p>
+        <!-- <button class="ad-btn">Go Ad-Free</button> -->
+        <p>Sign in</p>
+        <button class="signup-btn">
+          <p>Sign up</p>
+        </button>
+      </div>
+    </div>
+    <div class="nav-section2">
+      <div class="heading">
+        <h4>On the internet, nobody knows you're a dog.</h4>
+        <div class="tags">
+          <div>EXPLORE TAGS</div>
+          <div>MORE TAGS +</div>
+        </div>
+      </div>
+      <!-- NAV CONTAINER 2 -->
+      
+      <div class="explore-container">
+        <div class="images-trending-c">
+          <div class="item1" style="background-image: url('./images/img11.jpg')">
+            <div class="items-trending A">
+              <p>Music</p>
+              <p>FEATURED 36,197 posts</p>
+            </div>
+          </div>
+        </div>
+        <div class="images-trending-c">
+          <div class="item1" style="background-image: url('./images/img12.jpg')">
+            <div class="items-trending B">
+              <p>Dad Jokes</p>
+              <p>7,515 Post</p>
+            </div>
+          </div>
+        </div>
+        <div class="images-trending-c">
+          <div class="item1" style="background-image: url('./images/img13.jpg')">
+            <div class="items-trending C">
+              <p>Music</p>
+              <p>4500 posts</p>
+            </div>
+          </div>
+        </div>
+        <div class="images-trending-c">
+          <div class="item1" style="background-image: url('./images/img15.jpg')">
+            <div class="items-trending D">
+              <p>Pride</p>
+              <p>7892 posts</p>
+            </div>
+          </div>
+        </div>
+        <div class="images-trending-c">
+          <div class="item1" style="background-image: url('./images/img16.png')">
+            <div class="items-trending E">
+              <p>
+                Dream <br />
+                distination
+              </p>
+              <p>36,197 posts</p>
+            </div>
+          </div>
+        </div>
+        <div class="images-trending-c">
+          <div class="item1" style="background-image: url('./images/img17.jpg')">
+            <div class="items-trending F">
+              <p>
+                Nature <br />
+                Photography
+              </p>
+              <p>1250 posts</p>
+            </div>
+          </div>
+        </div>
+        <div class="images-trending-c">
+          <div class="item1" style="background-image: url('./images/img18.jpg')">
+            <div class="items-trending G">
+              <p>oc</p>
+              <p>5006 posts</p>
+            </div>
+          </div>
+        </div>
+        <div class="images-trending-c">
+          <div class="item1" style="background-image: url('./images/img13.jpg')">
+            <div class="items-trending H">
+              <p>Funny</p>
+              <p>9931 posts</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- NAV SECTION 3 -->    
+       <!-- NAV CONTAINER 2 -->
+     
+     <!--dffffff--->        
+      <section>
+        <div class="nav-section-3">
+          <div class="drop-down">
+            <select name="" id="">
+              <option value="">MOST VIRAL</option>
+              <option value="">USER SUBMITTED</option>
+              <option value="">HIGHEST SCORING</option>
+            </select>
+          </div>
+          <div class="drop-ryt-div">
+            <div class="drop-down">
+              <select name="" id="">
+                <option value="">TODAY</option>
+                <option value="">WEEK</option>
+                <option value="">MONTH</option>
+                <option value="">YEAR</option>
+                <option value="">ALL TIME</option>
+              </select>
+              <span class="material-icons md-48"> filter_list </span>
+              <span class="material-icons md-48"> smart_display </span>
+              <span class="material-icons md-48"> window </span>
+            </div>
+          </div>
+        </div>
+      </section>
+     
+    </div>
+  </nav>
+  <div id="data_display">
+ 
+  </div>
+</body>
+
+</html>
+
+<script src="./scripts/index.js"></script>
+<script>
+  let movies_div = document.getElementById("movies");
+
+  let movie_waiting;
+
+  async function searchMovie() {
+      try {
+          let movie = document.getElementById("movie").value
+
+          if (movie.length <= 2) {
+              return false;
+          }
+          let response = await fetch(`http://www.omdbapi.com/?apikey=dfe7259c&s=${movie}`)
+
+
+          let data = await response.json();
+          console.log("data:", data)
+          let movies_arr = data.Search
+
+          appendMovies(movies_arr)
+      } catch (er) {
+          console.log("er:", er);
+      }
+  }
+  function appendMovies(movies) {
+      movies_div.innerHTML = null;
+      if (movies === undefined) {
+          return false;
+      }
+      movies.forEach(function (element) {
+          let p = document.createElement("p");
+
+          p.innerText = element.Title;
+          p.addEventListener("click", function () {
+              Search(element.Title);
+          });
+
+          movies_div.append(p)
+      })
+  }
+
+  function Search(title) {
+      console.log("title:", title);
+      let url = `http://www.omdbapi.com/?apikey=dfe7259c&t=${title}`;
+      searchMdata(url)
+  }
+
+  async function searchMdata(url) {
+
+      let result = await fetch(url);
+      let data = await result.json();
+      console.log("data", data)
+      console.log("data:", data.Ratings[1])
+      appendFinal(data)
+  }
+  function appendFinal(elem) {
+
+      let mcont = document.getElementById("mcont")
+      mcont.style.background = "black"
+      mcont.innerHTML = "";
+      let div = document.createElement("div")
+
+      let img = document.createElement("img");
+      img.src = elem.Poster
+
+      let p = document.createElement("p");
+      p.innerText = elem.Title
+
+      let rel = document.createElement("p");
+      rel.innerText = elem.Released;
+
+      let year = document.createElement("p");
+      year.innerText = elem.Year
+
+      let direc = document.createElement("p");
+      direc.innerText = elem.Director;
+
+      div.append(img, p, direc, rel, year)
+      mcont.append(div)
+  }
+
+  function debounce(func, delay) {
+
+      if (movie_waiting) {
+          clearTimeout(movie_waiting);
+      }
+
+      movie_waiting = setTimeout(function () {
+          func();
+      }, delay);
+
+
+  }
+
+
+
+</script>
