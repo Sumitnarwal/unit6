@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #SearchContext {
+            max-height: 400px;
+            width: 300px;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="inp" type="text" placeholder="search data eg.oppo,iphone,me" />
+    <button id="btn" onclick="throttle(main,4000)">Click Me</button>
+    <div id="SearchContext"></div>
+</body>
+
+</html>
+<script>
+
+    async function search() {
+        try {
+            const search_name = document.getElementById('inp').value
+            const data = await fetch(`https://api.unsplash.com/search/photos?per_page=28&query=${search_name}&client_id=8lBaqc-XJTCXhnwvlftCl7DNmzD3HU9CsGnMNyaHxMo`)
+            const result = await data.json();
+            console.log("search done")
+            return result.results
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
+
+
+    async function main() {
+        console.log("Request made")
+        const data = await search()
+        //console.log(data)
+        append(data)
+    }
+
+    function append(data) {
+        document.getElementById('SearchContext').textContent = ''
+        data.map((e) => {
+            let p = document.createElement('p')
+            p.textContent = e.alt_description
+
+            document.getElementById('SearchContext').append(p)
+            console.log("data append")
+        })
+    }
+
+    let TrotleTime;
+    const throttle = (fun, delay) => {
+        let last = 0;
+        console.log("click me")
+        if (TrotleTime) {
+            console.log("R u maid why u click so many time")
+            return
+        }
+        TrotleTime = true;
+        setTimeout(() => {
+            fun()
+            TrotleTime = false;
+        }, delay)
+
+        // return (...args) => {
+
+        //     const now = new Date().getTime();
+        //     console.log(now)
+        //     if (now - last < delay) {
+        //         return;
+        //     }
+        //     last = now;
+        //     return fun(...args)
+        // }
+    }
+
+
+
+
+</script>
