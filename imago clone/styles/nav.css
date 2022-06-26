@@ -248,6 +248,15 @@
   width: 200px;
   overflow: scroll;
   border: solid 1px black;
+  position: relative;
+  margin-top: 300px;
+  margin-right: 210px;
+  width: 300px;
+  color: white;
+  
+  line-height: 29px;
+  background-color: rgb(26, 21, 21);
+
 }
 
 #mcont {

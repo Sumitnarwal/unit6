@@ -16,7 +16,7 @@
 
 <body>
   <nav class="container" style="background-image: url('./images/bg.png')">
-    
+
     <div class="nav-section">
       <div class="logo">
         <img src="./images/logo.png" alt="" />
@@ -28,12 +28,14 @@
       </div>
 
       <div class="search">
-        <input type="text" oninput="debounce(searchMovie,900)" class="text" id="movie" placeholder="Images, #tags, @users oh my!" />
+        <input type="text" oninput="debounce(searchMovie,900)" class="text" id="movie"
+          placeholder="Images, #tags, @users oh my!" />
         <button class="search-btn">
+          <div id="movies"></div>
           <span class="material-icons md-48"> search </span>
         </button>
       </div>
-    
+
       <div class="sign">
         <p><span class="material-icons md-34"> badge </span></p>
         <!-- <button class="ad-btn">Go Ad-Free</button> -->
@@ -52,7 +54,7 @@
         </div>
       </div>
       <!-- NAV CONTAINER 2 -->
-      
+
       <div class="explore-container">
         <div class="images-trending-c">
           <div class="item1" style="background-image: url('./images/img11.jpg')">
@@ -125,10 +127,10 @@
           </div>
         </div>
       </div>
-      <!-- NAV SECTION 3 -->    
-       <!-- NAV CONTAINER 2 -->
-     
-     <!--dffffff--->        
+      <!-- NAV SECTION 3 -->
+      <!-- NAV CONTAINER 2 -->
+
+      <!--dffffff--->
       <section>
         <div class="nav-section-3">
           <div class="drop-down">
@@ -154,11 +156,11 @@
           </div>
         </div>
       </section>
-     
+
     </div>
   </nav>
   <div id="data_display">
- 
+
   </div>
 </body>
 
@@ -171,90 +173,90 @@
   let movie_waiting;
 
   async function searchMovie() {
-      try {
-          let movie = document.getElementById("movie").value
+    try {
+      let movie = document.getElementById("movie").value
 
-          if (movie.length <= 2) {
-              return false;
-          }
-          let response = await fetch(`http://www.omdbapi.com/?apikey=dfe7259c&s=${movie}`)
-
-
-          let data = await response.json();
-          console.log("data:", data)
-          let movies_arr = data.Search
-
-          appendMovies(movies_arr)
-      } catch (er) {
-          console.log("er:", er);
+      if (movie.length <= 2) {
+        return false;
       }
+      let response = await fetch(`http://www.omdbapi.com/?apikey=dfe7259c&s=${movie}`)
+
+
+      let data = await response.json();
+      console.log("data:", data)
+      let movies_arr = data.Search
+
+      appendMovies(movies_arr)
+    } catch (er) {
+      console.log("er:", er);
+    }
   }
   function appendMovies(movies) {
-      movies_div.innerHTML = null;
-      if (movies === undefined) {
-          return false;
-      }
-      movies.forEach(function (element) {
-          let p = document.createElement("p");
+    movies_div.innerHTML = null;
+    if (movies === undefined) {
+      return false;
+    }
+    movies.forEach(function (element) {
+      let p = document.createElement("p");
 
-          p.innerText = element.Title;
-          p.addEventListener("click", function () {
-              Search(element.Title);
-          });
+      p.innerText = element.Title;
+      p.addEventListener("click", function () {
+        Search(element.Title);
+      });
 
-          movies_div.append(p)
-      })
+      movies_div.append(p)
+    })
   }
 
   function Search(title) {
-      console.log("title:", title);
-      let url = `http://www.omdbapi.com/?apikey=dfe7259c&t=${title}`;
-      searchMdata(url)
+    console.log("title:", title);
+    let url = `http://www.omdbapi.com/?apikey=dfe7259c&t=${title}`;
+    searchMdata(url)
   }
 
   async function searchMdata(url) {
 
-      let result = await fetch(url);
-      let data = await result.json();
-      console.log("data", data)
-      console.log("data:", data.Ratings[1])
-      appendFinal(data)
+    let result = await fetch(url);
+    let data = await result.json();
+    console.log("data", data)
+    console.log("data:", data.Ratings[1])
+    appendFinal(data)
   }
   function appendFinal(elem) {
 
-      let mcont = document.getElementById("mcont")
-      mcont.style.background = "black"
-      mcont.innerHTML = "";
-      let div = document.createElement("div")
+    let mcont = document.getElementById("mcont")
+    mcont.style.background = "black"
+    mcont.innerHTML = "";
+    let div = document.createElement("div")
 
-      let img = document.createElement("img");
-      img.src = elem.Poster
+    let img = document.createElement("img");
+    img.src = elem.Poster
 
-      let p = document.createElement("p");
-      p.innerText = elem.Title
+    let p = document.createElement("p");
+    p.innerText = elem.Title
 
-      let rel = document.createElement("p");
-      rel.innerText = elem.Released;
+    let rel = document.createElement("p");
+    rel.innerText = elem.Released;
 
-      let year = document.createElement("p");
-      year.innerText = elem.Year
+    let year = document.createElement("p");
+    year.innerText = elem.Year
 
-      let direc = document.createElement("p");
-      direc.innerText = elem.Director;
+    let direc = document.createElement("p");
+    direc.innerText = elem.Director;
 
-      div.append(img, p, direc, rel, year)
-      mcont.append(div)
+    div.append(img, p, direc, rel, year)
+    mcont.append(div)
   }
 
   function debounce(func, delay) {
 
-      if (movie_waiting) {
-          clearTimeout(movie_waiting);
-      }
+    if (movie_waiting) {
+      clearTimeout(movie_waiting);
+    }
 
-      movie_waiting = setTimeout(function () {
-          func();
-      }, delay);
+    movie_waiting = setTimeout(function () {
+      func();
+    }, delay);
 
 
   }
