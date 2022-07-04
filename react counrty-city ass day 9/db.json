@@ -1,0 +1,60 @@
+{
+  "countrys": [
+    {
+      "country": "afgainstan",
+      "population": "11,000,000",
+      "city": "Kabul",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "population": "5,000,000",
+      "country": "Algeria",
+      "city": "Alger"
+    },
+    {
+      "id": 5,
+      "population": "14,00,00",
+      "country": "Canada",
+      "city": "Ottawa"
+    },
+    {
+      "id": 6,
+      "population": "15,00,000",
+      "country": "Egypt",
+      "city": "Cairo"
+    },
+    {
+      "country": "",
+      "population": "",
+      "city": "",
+      "id": 7
+    }
+  ],
+  "dupcontry": [
+    {
+      "country": "afgainstan",
+      "population": "11,000,000",
+      "city": "Kabul",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "population": "5,000,000",
+      "country": "Algeria",
+      "city": "Alger"
+    },
+    {
+      "id": 5,
+      "population": "14,00,00",
+      "country": "Canada",
+      "city": "Ottawa"
+    },
+    {
+      "id": 6,
+      "population": "15,00,000",
+      "country": "Egypt",
+      "city": "Cairo"
+    }
+  ]
+}
