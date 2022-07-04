@@ -16,7 +16,7 @@ export const AddCountry = () => {
     //    })
     const handleAdd = () => {
         axios({
-            url: "http://localhost:8000/countrys",
+            url: "https://cartiphone.herokuapp.com/countrys",
             method: "POST",
             data: {
                 population: pop,

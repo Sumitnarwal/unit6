@@ -10,7 +10,7 @@ export const EditDelail = () => {
     const coun = useSelector((state) => state.country.singlePro)
    const cityUpdate=()=>{       
        axios({
-           url: `http://localhost:8000/countrys/${coun.id}`,
+           url: `https://cartiphone.herokuapp.com/${coun.id}`,
            method: "PUT",
            data:{
              country:`${coun.country}`  ,
@@ -22,7 +22,7 @@ export const EditDelail = () => {
             navigate("/")
         })
     }
-    
+
     return (
         <div>
           <h3>Update detail</h3>

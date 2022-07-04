@@ -26,7 +26,7 @@ export const fetchCountry = (sort) => (dispatch) => {
     dispatch(fetchCountryRequest());
 
     axios({
-        url: "http://localhost:8000/countrys",
+        url: "https://cartiphone.herokuapp.com/countrys",
         method: "GET",
         params: {
             _sort: "population",
@@ -42,7 +42,7 @@ export const DeleteCountrySuccess = () => ({
 });
 export const handleSplice = (id) => (dispatch) => {
 axios({
-        url: `http://localhost:8000/countrys/${id}`,
+        url: `https://cartiphone.herokuapp.com/countrys/${id}`,
         method: "DELETE",
 
     }).then((res) => {
@@ -60,7 +60,7 @@ export const EditCountrySuccess = (data) => ({
 
 export const editCountry = (id) => (dispatch) => {
     axios({
-        url: `http://localhost:8000/countrys/${id}`,
+        url: `https://cartiphone.herokuapp.com/countrys/${id}`,
         method: "GET",
 
     }).then((res) => {

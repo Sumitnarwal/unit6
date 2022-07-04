@@ -12,6 +12,7 @@ export const Home = () => {
     const [sort, setSort] = useState("asc")
     const [country,setCountry]=useState("")
     const [poppu,setPoplu]=useState("")
+    
     useEffect(() => {
         dispatch(fetchCountry(sort))
     }, [sort])
@@ -34,22 +35,21 @@ export const Home = () => {
         dispatch(editCountry(id))
         setCountry(deleteCityid.country)
         setPoplu(deleteCityid.population)
+        console.log(country,poppu)
         axios({
-            url: `http://localhost:8000/countrys/${id}`,
-            method: "PUT",
+            url: `https://cartiphone.herokuapp.com/${id}`,
+            method: "PATCH",
             data:{
-              country:`${country}`  ,
-              population:`${poppu}`  ,
              city:""
             }
          }).then((res) => {
-             alert(`city change ${coun.city} to ${city}`)
-             navigate("/")
+         //    alert(`city change ${coun.city} to ${city}`)
+         dispatch(fetchCountry(sort))
          })
     }
     return (
         <div id="countDiv">
-
+<h2>DATA</h2>
         <table>
         
         <tr>
@@ -64,7 +64,7 @@ export const Home = () => {
                     <tr>
                         <td>{i + 1}</td>
                         <td>{it.country}</td>
-                        <td>{it.city} {"  "} <button onClick={()=>deletCity(it.id)}>Delete</button></td>
+                        <td>{it.city} {"  "} <button disabled={it.city===""} onClick={()=>deletCity(it.id)}> Delete</button></td>
                         <td>{it.population}</td>
                         <td><button onClick={() => handleEdit(it.id)}>Edit </button></td>
                         <td><button onClick={() => handleDelete(it.id)}>Delete</button></td>
