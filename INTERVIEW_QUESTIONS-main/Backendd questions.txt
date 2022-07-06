@@ -1,0 +1,6 @@
+
+1-What is Caching? How can you save money with Caching?
+ans-Caching is a technique that stores copies of files in a cache, a temporary storage location,it just below the CPU, so that the files can be accessed more quickly. This results in significantly faster load times, but also decreases the load on the server.
+
+2-What is load balancing?
+ANS-
