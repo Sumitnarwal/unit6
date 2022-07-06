@@ -3,4 +3,100 @@
 ans-Caching is a technique that stores copies of files in a cache, a temporary storage location,it just below the CPU, so that the files can be accessed more quickly. This results in significantly faster load times, but also decreases the load on the server.
 
 2-What is load balancing?
-ANS-
+ANS-Load balancing is the process of distributing network traffic across multiple servers. This ensures no single server bears too much demand. By spreading the work evenly, load balancing improves application responsiveness. It also increases availability of applications and websites for users
+
+3-What is CAP Theorem?
+ans-consistency, availability and partition tolerance,
+The CAP theorem (also called Brewer’s theorem) states that a distributed database system can only guarantee two out of these three characteristics: Consistency, Availability, and Partition Tolerance.
+
+4-What is PACELC Theorem?
+ans-
+
+5-What is Eventual Consistency?
+ans-
+
+
+6-What is Strong Consistency?
+ans-Centralised database.
+Distributed database.
+Personal database.
+End-user database.
+Commercial database.
+NoSQL database.
+Operational database.
+Relational database.
+
+6.1-What is Strong Consistency?
+ans
+
+7-What are message queues?
+ans-message queues are message box between Producer and consumer(worker),let think there are lot of command give to user to server this all command went to server throgh Message Queue
+
+8-Which service by Amazon Web Services (AWS) can you use for Queues?
+ans-Amazon Simple Queue Service (SQS)Amazon Simple Queue Service (SQS)
+
+
+9-What is Pub Sub ?
+ans-Publish/subscribe messaging
+
+
+10-What are webhooks?
+ans-
+
+11-What is Docker?
+ans-Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. The service has both free and premium tiers. The software that hosts the containers is called Docker Engine example-github,aws,heroku,api saver,mongo db
+
+12-What is S3 Service in AWS?
+ans-Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance.
+
+13-What is EC2 Instance in AWS?
+ans-Amazon Elastic Compute Cloud (Amazon EC2) offers the broadest and deepest compute platform, with over 500 instances and choice of the latest processor, storage, networking, operating system, and purchase model to help you best match the needs of your workload.
+Example-Like i have a app flipkar in normal day there ere less coustomer and near diwali 20-50x customer increase for that i need server,RAM,storage any many more thing just just for few days,this all things provided by  EC2 AWS
+
+14-What is Cloudfront in AWS?
+ans-Amazon CloudFront is a web service that speeds up distribution of your static and dynamic web content, such as .html, .css, .js, and image files, to your users
+
+15-What is Route 53 In AWS?
+ans-Route 553 is a AWS DNS service provider,It work with outher AWS tools which make it faster,it also work with non AWS services 
+
+
+16-What are ELBs in AWS?
+ns-Elastic Load Balancing (ELB) automatically distributes incoming application traffic across multiple targets and virtual appliances in one or more Availability Zones (AZs)
+
+17-What is TLS?
+ans-Transport Layer Security is a cryptographic protocol designed to provide communications security over a computer network. The protocol is widely used in applications such as email, instant messaging, and voice over IP, but its use in securing HTTPS remains the most publicly visible
+
+18-What is the difference between https and http?
+ans-HTTPS is HTTP with encryption. The only difference between the two protocols is that HTTPS uses TLS (SSL) to encrypt normal HTTP requests and responses. As a result, HTTPS is far more secure than HTTP. A website that uses HTTP has http:// in its URL, while a website that uses HTTPS has https://
+
+19-What is a proxy?
+ans-In computer networking, a proxy server is a server application that acts as an intermediary between a client requesting a resource and the server providing that resource
+
+20-What is a reverse proxy?
+ans-In computer networks, a reverse proxy is the application that sits in front of back-end applications and forwards client requests to those applications. Reverse proxies help increase scalability, performance,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
