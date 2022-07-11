@@ -1,9 +1,8 @@
 
 
 1.Explain briefly what happens when you hit a url? explain DNS lookup?
-ans. The browser looks up the IP address for the domain name via DNS. 
-The browser sends a HTTP request to the server. The server sends back a HTTP response.
-A DNS lookup, in a general sense, is the process by which a DNS record is returned from a DNS server. This is like looking up a phone number in a phone book - that is why it is referred to as a "lookup".
+ans. The browser looks up the IP address for the domain name via DNS. The browser sends a HTTP request to the server. The server sends back a HTTP response.
+             A DNS lookup, in a general sense, is the process by which a DNS record is returned from a DNS server. This is like looking up a phone number in a phone book - that is why it is referred to as a "lookup".
 
 
 
@@ -26,7 +25,7 @@ ans: It is a css property
 -It work only for position:relative,absolute,fixed .
 -defalut setting is static
 
-4.What is TCP Protocol?
+4.What is TCP Protocol? ////////////////////////////////////////////////////////////////////////////
 TCP stands for Transmission Control Protocol a communications standard that enables application programs and computing devices to exchange messages over a network. It is designed to send packets across the internet and ensure the successful delivery of data and messages over networks.
 
 
@@ -44,11 +43,12 @@ A 2xx Succesful status code means that the request was successful and the browse
 
 The 3xx class of HTTP Status Codes indicates that further action needs to be taken by the user agent in order to fulfill a request. The required action may be carried out by the user agent without interaction with the user, if and only if, the method used in the second request is GET or HEAD.
 
-A 4xx code indicates an error caused by the user, whereas 5xx codes tell the client that they did everything correctly and it's the server itself who caused the problem.
+A 4xx code indicates an error caused by the user, 
+5xx codes tell the client that they did everything correctly and it's the server itself who caused the problem.
 
 
 
-8.What does cache control on http response mean?
+8.What does cache control on http response mean?//////////////////////////////////////
 Cache-control is an HTTP header used to specify browser caching policies in both client requests and server responses. Policies include how a resource is cached, where it's cached and its maximum age before expiring
 
 9.What is polling?
