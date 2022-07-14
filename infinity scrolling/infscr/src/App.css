@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+  height: 200px;
+  
+}
+
+.container {
+  width: auto;
+  background: #ebebeb;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+
+ 
+}
+
+.divpok{
+ 
+  width: 100px;
+  height: 30px;
+  border: 1px solid black;
+  padding: 20px 30px;
+  text-align: center;
+  margin: auto;
+}
