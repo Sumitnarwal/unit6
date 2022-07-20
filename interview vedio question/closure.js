@@ -5,7 +5,7 @@
 //    return  function (b) {
 //          console.log(a + b)
 //     }
- 
+
 // }
 // sum(4)(5)
 
@@ -37,5 +37,26 @@
 // let store=sum(3,4,5)
 // console.log(store.getSumTwo())
 // console.log(store.getSumThree())
+
+
+
+
+
+
+async function test(delay) {
+    let promise = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            resolve("done!");
+        }, delay);
+    })
+
+    let result = await promise;
+
+  //  console.log(result);
+}
+
+test(1000);
+
+
 
 

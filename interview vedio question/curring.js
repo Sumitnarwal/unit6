@@ -10,33 +10,33 @@
 // console.log(res)
 
 //////////////// curring method
-// function add(a) {
-//     return function (b) {
-//         return function (c) {
-//             return a + b + c
-//         }
-//     }
-// }
+function add(a) {
+    return function (b) {
+        return function (c) {
+            return a + b + c
+        }
+    }
+}
 
 // let res = add(2)
 // let data = res(3)
 // let data1 = data(4)
 // console.log(data1)
-///or
-//let res=add(2)(3)(4)
 
+let res=add(2)(3)(4)
+console.log(res)
  ////////////////////////////
 
 
- let useObj={
-    name:"sumit",
-    age:26
- }
+//  let useObj={
+//     name:"sumit",
+//     age:26
+//  }
 
- function userInfo(obj){
-    return function(userinfo){
-        return obj[userinfo]
-    }
- }
- let res=userInfo(useObj)
- console.log(res("age"))
+//  function userInfo(obj){
+//     return function(userinfo){
+//         return obj[userinfo]
+//     }
+//  }
+// // let res=userInfo(useObj)
+//  console.log(res("age"))

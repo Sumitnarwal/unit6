@@ -1,6 +1,6 @@
 
 1-What is Caching? How can you save money with Caching?
-ans-Caching is a technique that stores copies of files in a cache, a temporary storage location,it just below the CPU, so that the files can be assces more quickly. This results in significantly faster load times, but also decreases the load on the server.
+ans-Caching is a technique that stores copies of files in a cache, a temporary storage location,it just below the CPU, so that the files can be access more quickly. This results in significantly faster load times, but also decreases the load on the server.
 
 2-What is load balancing?
 ANS-Load balancing is the process of distributing network traffic across multiple servers. This ensures no single server bears too much demand. By spreading the work evenly, load balancing improves application responsiveness. It also increases availability of applications and websites for users

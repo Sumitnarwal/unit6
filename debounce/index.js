@@ -21,6 +21,7 @@ function append(data){
         document.getElementById("SearchContext").append(p)
     })
 }
+
 async function Search() {
     try {
         const searchText = document.getElementById("searchText").value
