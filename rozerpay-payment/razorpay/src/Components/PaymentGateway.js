@@ -9,7 +9,7 @@ export default async function displayRazorpay() {
     key: "rzp_test_XmZRCQRG4zhL6B",
     currency: data.currency,
     amount: data.amount,
-    name: "Divash Upadhyay",
+    name: "Sumit Narwal",
     description: "Wallet Transaction",
     image: "http://localhost:1337/logo",
     order_id: data.id,
@@ -19,7 +19,7 @@ export default async function displayRazorpay() {
     },
     prefill: {
       name: "Divash Upadhyay",
-      email: "dishuupadhyay507@gmail.com",
+      email: "sumitnarwal39@gmail.com",
       contact: "9560916993",
     },
   };
