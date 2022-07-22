@@ -34,10 +34,7 @@
         } catch (error) {
             console.log(error)
         }
-
     }
-
-
 
     async function main() {
         console.log("Request made")
@@ -51,14 +48,14 @@
         data.map((e) => {
             let p = document.createElement('p')
             p.textContent = e.alt_description
-
             document.getElementById('SearchContext').append(p)
             console.log("data append")
         })
     }
 
+    
     let TrotleTime;
-    const throttle = (fun, delay) => {
+    function throttle(fun, delay) {
         let last = 0;
         console.log("click me")
         if (TrotleTime) {
