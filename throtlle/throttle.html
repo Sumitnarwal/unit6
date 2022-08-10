@@ -17,13 +17,11 @@
 
 <body>
     <input id="inp" type="text" placeholder="search data eg.oppo,iphone,me" />
-    <button id="btn" onclick="throttle(main,4000)">Click Me</button>
+    <button id="btn" onclick="throttle(main,2000)">Click Me</button>
     <div id="SearchContext"></div>
 </body>
-
 </html>
 <script>
-
     async function search() {
         try {
             const search_name = document.getElementById('inp').value
@@ -52,11 +50,9 @@
             console.log("data append")
         })
     }
-
-    
     let TrotleTime;
-    function throttle(fun, delay) {
-        let last = 0;
+    function throttle(main, delay) {
+    //    let last = 0;
         console.log("click me")
         if (TrotleTime) {
             console.log("R u maid why u click so many time")
@@ -64,12 +60,18 @@
         }
         TrotleTime = true;
         setTimeout(() => {
-            fun()
+            main()
             TrotleTime = false;
         }, delay)
 
-        // return (...args) => {
 
+
+
+
+
+
+
+        // return (...args) => {
         //     const now = new Date().getTime();
         //     console.log(now)
         //     if (now - last < delay) {

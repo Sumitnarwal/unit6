@@ -14,6 +14,11 @@ The Redux Store can be likened to the Bank Vault. It holds the state of your app
 This leads to the first Redux principle:
 Have a single source of truth: The state of your whole application is stored in an object tree within a single Redux store.
 In simple terms, with Redux, it is is advisable to store your application state in a single object managed by the Redux STORE. It’s like having ONE VAULT as opposed to littering money everywhere along the bank hall.
+=======================================================================
+What is webpack ?
+Webpack is a powerful module bundler for JavaScript applications. It packages all the modules in your application into one or more bundles (often, just one) and serves it to the browser
+
+
 
 What is immutability?
 Immutability allows you to track the changes that happen to these objects like a chain of events. Variables have new references that are easy to track compared to existing variables. This helps in debugging the code and building the concurrent application.
@@ -53,8 +58,6 @@ Redux:=>
 5.Incredibly powerful Redux Dev Tools to ease debugging
 6.Better code organization with separate UI logic and State Management Logic
 
-What is webpack ?
-Webpack is a module bundler. Webpack can take care of bundling alongside a separate task runner. However, the line between bundler and task runner has become blurred thanks to community-developed webpack plugins. Sometimes these plugins are used to perform tasks that are usually done outside of webpack, such as cleaning the build directory or deploying the build although you can defer these tasks outside of webpack.
 
 What is treeshaking ?
 Tree shaking is a term commonly used within a JavaScript context to describe the removal of dead code.
@@ -62,15 +65,17 @@ It relies on the import and export statements in ES2015 to detect if code module
 In modern JavaScript applications, we use module bundlers (e.g., webpack or Rollup) to automatically remove dead code when bundling multiple JavaScript files into single files. This is important for preparing code that is production ready, for example with clean structures and minimal file size.
 
 
-
 What are some features of using webpack?
 Webpack is a static build tool and there are 4 key concepts to understand how it works.
+
 Entry
 Webpack creates a graph of all of your application's dependencies. The starting point of this graph is known as an entry point. The entry point tells Webpack where to start and follows the graph of dependencies to know what to bundle. You can think of your application's entry point as the contextual root or the first file to kick off your app.
 In Webpack we define entry points using the entry property in our Webpack configuration object.
 The simplest example is seen below:
+
 Output
 Once you've bundled all of your assets together, we still need to tell Webpack where to bundle our application. The webpack output property describes to Webpack how to treat bundled code.
+
 Loaders
 The goal is to have all of the assets in your project to be Webpack's concern and not the browser's. (This doesn't mean that they all have to be bundled together). Webpack treats every file (.css, .html, .scss, .jpg, etc.) as a module. However, Webpack only understands JavaScript.
 Loaders in webpack_transform these files into modules_as they are added to your dependency graph.

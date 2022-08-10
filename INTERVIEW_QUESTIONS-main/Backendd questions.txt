@@ -77,16 +77,28 @@ ans-In computer networking, a proxy server is a server application that acts as 
 ans-In computer networks, a reverse proxy is the application that sits in front of back-end applications and forwards client requests to those applications. Reverse proxies help increase scalability, performance,
 
 
+21-What is Express.js?
+ans-Express.js is a Node js web application server framework, which is specifically designed for building single-page, multi-page, and hybrid web applications.
+It has become the standard server framework for node.js. Express is the backend part of something known as the MEAN stack.
 
+1) MongoDB – The standard NoSQL database
+2) Express.js – The default web applications framework
+3) Angular.js – The JavaScript MVC framework used for web applications
+4) Node.js – Framework used for scalable server-side and networking applications.
 
+22-What are Routes?
+ans-Routing determine the way in which an application responds to a client request to a particular endpoint.
 
+23-What are Node.js?
+-Node.js was created in 2009 by Ryan Dahl.
+ans-Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!
+-It is used for server-side programming, and primarily deployed for non-blocking, event-driven servers, 
+ -Node.js runs the V8 JavaScript engine,  outside of the browser. This allows Node.js to be very performant
 
+24-What is JavaScript?
+JavaScript is the programming language that underpins Node.js. It is a high-level language characterized by ‘curly bracket’ syntax, dynamic typing, prototype-based object orientations and first class functions.
 
-
-
-
-
-
+These features mean JavaScript can convert a static webpage to an interactive one, adding features such as search boxes, embedded videos or news feed refresh tools. These are features that aim to improve user experience by encouraging intuitive engagement
 
 
 
